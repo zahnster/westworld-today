@@ -1,0 +1,24 @@
+{
+  "name": "westworld-today",
+  "version": "1.0.0",
+  "description": "Is Westworld airing today?",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "heroku-postbuild": "npm run build",
+    "start": "next start -p $PORT"
+  },
+  "keywords": [
+    "westworld",
+    "today"
+  ],
+  "author": "Jade Pennig <jade@pennig.name>",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.20.1",
+    "next": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
