@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import moment from 'moment'
 
 export default () => (
   <div className="container">
@@ -8,7 +7,7 @@ export default () => (
     </Head>
 
     <h1>
-      Westworld season 2 will premiere {moment().set({ year: 2018, month: 4, day: 22, hour: 21}).fromNow()} on April 22nd, 2018, at 9pm, 8pm central.
+      Westworld season 2 will premiere on April 22nd, 2018, at 9pm, 8pm central.
     </h1>
 
     <style jsx global>{`
