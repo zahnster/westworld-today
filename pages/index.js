@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import moment from 'moment'
 import ReactGA from 'react-ga'
 
 export default class WestworldToday extends React.Component {
@@ -9,6 +8,10 @@ export default class WestworldToday extends React.Component {
   }
 
   render() {
+    const now = new Date()
+    const month = now.getMonth()
+    const inNumberOfDays = 22 - now.getDate()
+
     return (
       <div className="container">
         <Head>
@@ -16,19 +19,19 @@ export default class WestworldToday extends React.Component {
         </Head>
 
         <h1>
-          Westworld season 2 will premiere {moment().set({ year: 2018, month: 4, day: 22, hour: 21}).fromNow()} on April 22nd, 2018, at 9pm, 8pm central.
+        {(month === 3 && inNumberOfDays >= 0) ? (
+          `Westworld season 2 will premiere in ${inNumberOfDays} days on April 22nd, 2018, at 9pm, 8pm central.`
+        ) : 'Enjoy the season!'}
         </h1>
 
         <style jsx global>{`
           * { padding: 0; margin: 0; box-sizing: border-box; }
 
-          html {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-          }
-
           .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             padding: 5vw;
             font-family: "Raleway", sans-serif;
             font-size: 1.5rem;
